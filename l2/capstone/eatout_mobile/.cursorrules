@@ -1,0 +1,92 @@
+# EatOut Mobile App Development Rules
+
+## Project Overview
+You are working on **EatOut**, a Flutter mobile application that allows users to browse restaurant menus, search for dining spots, and discover new restaurants. Restaurant owners can create and manage their digital menus in real time.
+
+## Technology Stack
+- **Framework**: Flutter
+- **Backend**: Firebase (Authentication + Firestore)
+- **State Management**: BLoC pattern
+- **Authentication**: Firebase Auth with email and 6-digit verification code, Google Sign In, and Apple Sign In
+- **Purchase Management**: RevenueCat for Pro subscriptions
+
+## Core Functionalities
+- **Public Features** (no login required):
+  - Browse and search restaurant menus
+  - View restaurant details and locations
+  - Discover new dining spots
+
+- **User Features** (login required):
+  - Save favorite restaurants
+  - User profile management
+
+- **Pro User Features** (Pro subscription required):
+  - Create and edit digital menus
+  - Set prices for menu items
+  - Toggle item availability
+  - Manage restaurant profiles
+
+## Development Guidelines
+
+### Code Structure
+- Follow Flutter best practices and Material Design guidelines
+- Use BLoC pattern for state management consistently
+- Organize code with clear separation of concerns:
+  - `/lib/features/` for feature-based organization
+  - `/lib/core/` for shared utilities and services
+  - `/lib/models/` for data models
+  - `/lib/services/` for Firebase and API services
+
+### Firebase Integration
+- Use Firebase Authentication for user management
+- Integrate required packages for social sign-in:
+  - `google_sign_in` for Google authentication
+  - `sign_in_with_apple` for Apple authentication
+- Implement Firestore for real-time data synchronization
+- Follow Firebase security rules best practices
+- Handle offline capabilities where appropriate
+
+### RevenueCat Integration
+- Use RevenueCat for Pro subscription management
+- Integrate `purchases_flutter` package for in-app purchases
+- Handle subscription status validation
+- Implement Pro feature access control based on subscription status
+- Handle subscription restoration and cancellation flows
+
+### UI/UX Considerations
+- Implement responsive design for various screen sizes
+- Use consistent theming and color schemes
+- Ensure accessibility compliance
+- Provide loading states and error handling
+- Create intuitive navigation for all app features
+
+### Authentication Flow
+- Implement Firebase Auth with multiple sign-in options:
+  - Email and 6-digit verification code (send verification codes to user's email)
+  - Google Sign In integration
+  - Apple Sign In integration (required for iOS App Store)
+- Secure routes based on authentication status and Pro subscription status
+- Handle Pro subscription verification for restaurant menu features
+
+### Data Models
+- Create clear data models for:
+  - User profiles (including subscription status)
+  - Restaurant information
+  - Menu items and categories
+  - Favorites and user preferences
+  - Subscription/Pro status information
+
+## Code Quality
+- Write clean, documented code with meaningful variable names
+- Implement proper error handling and validation
+- Use async/await patterns for Firebase operations
+- Follow Dart and Flutter linting rules
+- Prioritize performance and efficient widget rebuilding
+
+## Testing
+- Write unit tests for business logic
+- Implement widget tests for UI components
+- Test Firebase integration thoroughly
+- Handle edge cases and error scenarios
+
+When helping with this project, always consider the restaurant discovery and menu management context, and ensure solutions align with the BLoC architecture, Firebase integration, and RevenueCat subscription management patterns. Users have different capabilities based on their subscription status: all users can browse menus and save favorites, but only Pro subscribers can create and manage restaurant menus.
