@@ -15,7 +15,7 @@ class _DiscoverScreenState extends State<DiscoverScreen>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 2, vsync: this);
   }
 
   @override
@@ -44,7 +44,7 @@ class _DiscoverScreenState extends State<DiscoverScreen>
                 children: [
                   _buildNearbyTab(),
                   _buildTrendingTab(),
-                  _buildMapTab(),
+                  //_buildMapTab(),
                 ],
               ),
             ),
@@ -71,12 +71,12 @@ class _DiscoverScreenState extends State<DiscoverScreen>
                   color: AppColors.textPrimary,
                 ),
               ),
-              IconButton(
-                onPressed: () {
-                  // TODO: Open map view
-                },
-                icon: Icon(Icons.map_outlined, color: AppColors.textSecondary),
-              ),
+              // IconButton(
+              //   onPressed: () {
+              //     // TODO: Open map view
+              //   },
+              //   icon: Icon(Icons.map_outlined, color: AppColors.textSecondary),
+              // ),
             ],
           ),
           const SizedBox(height: 16),
@@ -96,15 +96,15 @@ class _DiscoverScreenState extends State<DiscoverScreen>
             ),
             child: TextField(
               decoration: InputDecoration(
-                hintText: 'Search cuisine, restaurant, location...',
+                hintText: 'Search restaurants, cuisines...',
                 hintStyle: TextStyle(color: AppColors.textHint),
                 prefixIcon: Icon(Icons.search, color: AppColors.textSecondary),
-                suffixIcon: IconButton(
-                  onPressed: () {
-                    // TODO: Show filter bottom sheet
-                  },
-                  icon: Icon(Icons.filter_list, color: AppColors.textSecondary),
-                ),
+                // suffixIcon: IconButton(
+                //   onPressed: () {
+                //     // TODO: Show filter bottom sheet
+                //   },
+                //   icon: Icon(Icons.filter_list, color: AppColors.textSecondary),
+                // ),
                 border: InputBorder.none,
                 contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               ),
@@ -129,7 +129,6 @@ class _DiscoverScreenState extends State<DiscoverScreen>
         tabs: const [
           Tab(text: 'Nearby'),
           Tab(text: 'Trending'),
-          Tab(text: 'Map View'),
         ],
       ),
     );
@@ -425,63 +424,63 @@ class _DiscoverScreenState extends State<DiscoverScreen>
     );
   }
 
-  Widget _buildMapTab() {
-    return Container(
-      margin: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: AppColors.surface,
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.map_outlined,
-            size: 80,
-            color: AppColors.textHint,
-          ),
-          const SizedBox(height: 16),
-          Text(
-            'Map View Coming Soon',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: AppColors.textPrimary,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            'Explore restaurants on an interactive map',
-            style: TextStyle(
-              fontSize: 16,
-              color: AppColors.textSecondary,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 24),
-          ElevatedButton(
-            onPressed: () {
-              // TODO: Enable location and show map
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.primary,
-              foregroundColor: AppColors.onPrimary,
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
-              ),
-            ),
-            child: const Text('Enable Location'),
-          ),
-        ],
-      ),
-    );
-  }
+  // Widget _buildMapTab() {
+  //   return Container(
+  //     margin: const EdgeInsets.all(16),
+  //     decoration: BoxDecoration(
+  //       color: AppColors.surface,
+  //       borderRadius: BorderRadius.circular(12),
+  //       boxShadow: [
+  //         BoxShadow(
+  //           color: Colors.black.withOpacity(0.05),
+  //           blurRadius: 10,
+  //           offset: const Offset(0, 2),
+  //         ),
+  //       ],
+  //     ),
+  //     child: Column(
+  //       mainAxisAlignment: MainAxisAlignment.center,
+  //       children: [
+  //         Icon(
+  //           Icons.map_outlined,
+  //           size: 80,
+  //           color: AppColors.textHint,
+  //         ),
+  //         const SizedBox(height: 16),
+  //         Text(
+  //           'Map View Coming Soon',
+  //           style: TextStyle(
+  //             fontSize: 20,
+  //             fontWeight: FontWeight.bold,
+  //             color: AppColors.textPrimary,
+  //           ),
+  //         ),
+  //         const SizedBox(height: 8),
+  //         Text(
+  //           'Explore restaurants on an interactive map',
+  //           style: TextStyle(
+  //             fontSize: 16,
+  //             color: AppColors.textSecondary,
+  //           ),
+  //           textAlign: TextAlign.center,
+  //         ),
+  //         const SizedBox(height: 24),
+  //         ElevatedButton(
+  //           onPressed: () {
+  //             // TODO: Enable location and show map
+  //           },
+  //           style: ElevatedButton.styleFrom(
+  //             backgroundColor: AppColors.primary,
+  //             foregroundColor: AppColors.onPrimary,
+  //             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+  //             shape: RoundedRectangleBorder(
+  //               borderRadius: BorderRadius.circular(8),
+  //             ),
+  //           ),
+  //           child: const Text('Enable Location'),
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
 }

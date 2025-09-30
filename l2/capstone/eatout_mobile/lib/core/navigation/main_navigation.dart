@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../features/home/screens/home_screen.dart';
 import '../../features/discover/screens/discover_screen.dart';
-import '../../features/settings/screens/settings_screen.dart';
+import '../../features/profile/screens/profile_screen.dart';
 import '../constants/app_colors.dart';
 
 class MainNavigation extends StatefulWidget {
@@ -17,7 +17,7 @@ class _MainNavigationState extends State<MainNavigation> {
   final List<Widget> _screens = [
     const HomeScreen(),
     const DiscoverScreen(),
-    const SettingsScreen(),
+    const ProfileScreen(),
   ];
 
   void _onTabTapped(int index) {
@@ -65,8 +65,8 @@ class _MainNavigationState extends State<MainNavigation> {
               label: 'Discover',
             ),
             BottomNavigationBarItem(
-              icon: _buildNavIcon(Icons.settings_outlined, Icons.settings, 2),
-              label: 'Settings',
+              icon: _buildNavIcon(Icons.person_outlined, Icons.person, 2),
+              label: 'Profile',
             ),
           ],
         ),

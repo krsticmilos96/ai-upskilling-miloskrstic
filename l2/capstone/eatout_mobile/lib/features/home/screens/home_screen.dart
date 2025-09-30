@@ -23,9 +23,9 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 24),
               
               // Nearby restaurants section
-              _buildSectionHeader('Nearby Restaurants'),
+              _buildSectionHeader('Nearby Places'),
               const SizedBox(height: 16),
-              _buildPopularRestaurants(),
+              _buildNearbyRestaurants(),
               const SizedBox(height: 24),
               
               // Favorites section (requires login)
@@ -64,14 +64,14 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(width: 16),
-        CircleAvatar(
-          backgroundColor: AppColors.primary,
-          child: Icon(
-            Icons.person,
-            color: AppColors.onPrimary,
-          ),
-        ),
+        // const SizedBox(width: 16),
+        // CircleAvatar(
+        //   backgroundColor: AppColors.primary,
+        //   child: Icon(
+        //     Icons.person,
+        //     color: AppColors.onPrimary,
+        //   ),
+        // ),
       ],
     );
   }
@@ -94,7 +94,7 @@ class HomeScreen extends StatelessWidget {
           hintText: 'Search restaurants, cuisines...',
           hintStyle: TextStyle(color: AppColors.textHint),
           prefixIcon: Icon(Icons.search, color: AppColors.textSecondary),
-          suffixIcon: Icon(Icons.tune, color: AppColors.textSecondary),
+          //suffixIcon: Icon(Icons.tune, color: AppColors.textSecondary),
           border: InputBorder.none,
           contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         ),
@@ -127,7 +127,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildPopularRestaurants() {
+  Widget _buildNearbyRestaurants() {
     return SizedBox(
       height: 200,
       child: ListView.builder(
